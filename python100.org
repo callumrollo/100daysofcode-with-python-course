@@ -1,0 +1,22 @@
+* Top line Python improving
+* Module specific
+** Timedelta
+timedelta seconds only go up to one day. Uses solely days and seconds internally
+** Collections module
+from collections import defaultdict, namedtuple, Counter, deque
+*** namedtuple, kinda like a dictionary. Sotre stuff with a default set of tags
+User = namedtuple('User', 'name role')
+user = User(name='bob', role='coder')
+call with user.role
+*** Default dic if you want to append/edit data to your names members on the fly
+ challenges_done = [('mike', 10), ('julian', 7), ('bob', 5),
+                   ('mike', 11), ('julian', 8), ('bob', 6)]
+challenges = defaultdict(list)
+for name, challenge in challenges_done:
+    challenges[name].append(challenge)
+*** Counter, v simple
+Counter(words).most_common(5)
+*** Deque is like a list but faster operating with adding and removing mid list
+** Cool stuff standard modules
+%timeit to time chunks of code
+Counter to efficiently count instances of stuff
